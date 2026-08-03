@@ -201,7 +201,7 @@ options(timeout = 1000000)
 
 ```r
 setwd("~/GST_BRCA")
-source("scripts/16_regenerate_all_figures.R")
+source("16_regenerate_all_figures.R")
 ```
 
 Requires the cache populated by scripts 01 to 15. Each figure is written as PNG
