@@ -291,6 +291,10 @@ d_t$time  <- suppressWarnings(ifelse(dead, as.numeric(tc$days_to_death[i]),
 d_t$event <- as.numeric(dead)
 d_t <- d_t[is.finite(d_t$time) & is.finite(d_t$event) & d_t$time > 0, ]
 
+# CORRECTION 5: restrict to the four PAM50 subtypes, matching 10_survival.R
+d_t$pam50 <- st$BRCA_Subtype_PAM50[match(d_t$patient, st$patient)]
+d_t <- d_t[d_t$pam50 %in% SUB, ]
+
 d_t$risk <- LOCKED_COEF * scale(d_t$expr)[, 1]
 d_t$grp  <- factor(ifelse(d_t$risk > median(d_t$risk), "High risk", "Low risk"),
                    levels = c("Low risk","High risk"))
@@ -339,6 +343,11 @@ d_m$time  <- suppressWarnings(as.numeric(mc[[mt]][j])) / 12
 d_m$event <- as.numeric(grepl("^1|DECEASED|Died", as.character(mc[[me]][j]),
                               ignore.case = TRUE))
 d_m <- d_m[is.finite(d_m$time) & is.finite(d_m$event) & d_m$time > 0, ]
+
+# CORRECTION 5, as above, for METABRIC CLAUDIN_SUBTYPE
+pcol <- grep("CLAUDIN_SUBTYPE", colnames(mc), value=TRUE, ignore.case=TRUE)[1]
+d_m$pam50 <- as.character(mc[[pcol]][match(d_m$sample, mc[[sid]])])
+d_m <- d_m[d_m$pam50 %in% SUB, ]
 
 # coefficients and scaling locked on TCGA: this is external validation
 d_m$risk <- LOCKED_COEF * ((d_m$expr - mean(d_t$expr)) / sd(d_t$expr))
