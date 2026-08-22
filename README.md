@@ -199,9 +199,12 @@ options(timeout = 1000000)
 
 ## Reproducing the figures
 
+Place the scripts from this repository in a `scripts/` subfolder of your
+working directory, so the layout is `~/GST_BRCA/scripts/`, then:
+
 ```r
 setwd("~/GST_BRCA")
-source("16_regenerate_all_figures.R")
+source("scripts/16_regenerate_all_figures.R")
 ```
 
 Requires the cache populated by scripts 01 to 15. Each figure is written as PNG
