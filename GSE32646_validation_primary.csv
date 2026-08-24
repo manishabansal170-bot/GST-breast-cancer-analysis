@@ -1,0 +1,3 @@
+"ER","gene","n","pCR_pct","OR_perSD","CI_low","CI_high","p","FDR","OR_discovery","same_direction","discovery_in_CI"
+"ER-positive","GSTM1",71,11.3,1.342,0.63,2.855,0.4457865504372,0.770788654087441,0.483,FALSE,FALSE
+"ER-positive","GSTM2",71,11.3,1.17,0.544,2.517,0.688110592148603,0.770788654087441,0.508,FALSE,FALSE
