@@ -1,0 +1,5 @@
+"configuration","n","events","HR_perSD","CI_low","CI_high","p","C_index"
+"As published, TCGA scaling transferred",1608,965,1.161,1.09,1.237,3.57374638845496e-06,0.56
+"Within-METABRIC standardisation",1608,965,1.161,1.09,1.237,3.57374638845495e-06,0.56
+"Rank-based, scale free",1608,965,1.161,1.09,1.237,3.72148199254433e-06,0.56
+"METABRIC-trained, tested in TCGA",1018,141,1.309,1.099,1.558,0.0025292272046489,0.587
