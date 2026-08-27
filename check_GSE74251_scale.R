@@ -1,0 +1,11 @@
+library(openxlsx)
+f <- path.expand("~/GST_BRCA/cache/GSE74251/GSE74251_YB5_MCF7_DAC_dose_summary_table.xlsx")
+d <- read.xlsx(f, sheet="MCF7"); names(d)[1] <- "gene"
+ctrl <- grep("Cntrl", names(d), value=TRUE); dac <- grep("DAC", names(d), value=TRUE)
+v <- as.matrix(d[, c(ctrl,dac)])
+cat("value range:", round(min(v,na.rm=TRUE),3), "to", round(max(v,na.rm=TRUE),1), "\n")
+cat("column sums (a count matrix would total millions):\n"); print(round(colSums(v,na.rm=TRUE),1))
+cat("\nany non-integers?", any(v %% 1 != 0, na.rm=TRUE), "\n")
+cat("median across genes:", round(median(v,na.rm=TRUE),3), "\n")
+cat("genes with all-zero:", sum(rowSums(v,na.rm=TRUE)==0), "of", nrow(d), "\n")
+cat("\nGSTP1 raw row:\n"); print(d[d$gene=="GSTP1", ])
