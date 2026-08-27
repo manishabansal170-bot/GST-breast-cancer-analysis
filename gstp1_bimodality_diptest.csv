@@ -1,0 +1,5 @@
+"subtype","n","median","dip","dip_p","best_G","verdict"
+"Basal",135,0.012,0.0268,0.744955358942005,2,"unimodal not rejected"
+"Her2",46,0.345,0.1358,0,2,"bimodal"
+"LumA",416,0.054,0.0133,0.935741199092346,2,"unimodal not rejected"
+"LumB",141,0.387,0.0922,0,2,"bimodal"

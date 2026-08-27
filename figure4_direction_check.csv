@@ -1,0 +1,7 @@
+"gene","lowest_beta","highest_expr","match"
+"GSTA4","Basal","Basal",TRUE
+"GSTZ1","LumB","LumA",FALSE
+"GSTP1","Basal","Basal",TRUE
+"GSTM2","LumA","LumA",TRUE
+"GSTO2","LumB","LumB",TRUE
+"GSTM4","LumA","LumA",TRUE
